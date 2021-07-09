@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="profile"
+            type="com.sample.ecommerce.data.api.model.User" />
+
+        <variable
+            name="fragment"
+            type="com.sample.ecommerce.ui.fragment.profile.ProfileFragment" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/ivShippingAddress"
+                android:layout_width="@dimen/_24sdp"
+                android:layout_height="@dimen/_24sdp"
+                android:layout_margin="@dimen/_12sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_shipping_address"
+                app:tint="@color/colorPrimary" />
+
+            <TextView
+                android:id="@+id/tvShippingAddress"
+                style="@style/Subtitle"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginEnd="@dimen/_8sdp"
+                android:gravity="start|center_vertical"
+                android:text="Shipping Address"
+                app:layout_constraintBottom_toBottomOf="@+id/ivShippingAddress"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/ivShippingAddress"
+                app:layout_constraintTop_toTopOf="@+id/ivShippingAddress" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_1sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:background="@color/colorPrimary"
+                app:layout_constraintEnd_toEndOf="@id/tvShippingAddress"
+                app:layout_constraintStart_toStartOf="@id/tvShippingAddress"
+                app:layout_constraintTop_toBottomOf="@id/tvShippingAddress" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/ivMyCards"
+                android:layout_width="@dimen/_24sdp"
+                android:layout_height="@dimen/_24sdp"
+                android:layout_margin="@dimen/_12sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_credit_card_payment"
+                app:tint="@color/colorPrimary" />
+
+            <TextView
+                android:id="@+id/tvMyCards"
+                style="@style/Subtitle"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginEnd="@dimen/_8sdp"
+                android:gravity="start|center_vertical"
+                android:text="My Cards"
+                app:layout_constraintBottom_toBottomOf="@+id/ivMyCards"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/ivMyCards"
+                app:layout_constraintTop_toTopOf="@+id/ivMyCards" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_1sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:background="@color/colorPrimary"
+                app:layout_constraintEnd_toEndOf="@id/tvMyCards"
+                app:layout_constraintStart_toStartOf="@id/tvMyCards"
+                app:layout_constraintTop_toBottomOf="@id/tvMyCards" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="@{profile.seller ? View.VISIBLE : View.GONE}">
+
+            <ImageView
+                android:id="@+id/ivMyProducts"
+                android:layout_width="@dimen/_24sdp"
+                android:layout_height="@dimen/_24sdp"
+                android:layout_margin="@dimen/_12sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_product"
+                app:tint="@color/colorPrimary" />
+
+            <TextView
+                android:id="@+id/tvMyProducts"
+                style="@style/Subtitle"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginEnd="@dimen/_8sdp"
+                android:gravity="start|center_vertical"
+                android:text="My Products"
+                app:layout_constraintBottom_toBottomOf="@+id/ivMyProducts"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/ivMyProducts"
+                app:layout_constraintTop_toTopOf="@+id/ivMyProducts" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_1sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:background="@color/colorPrimary"
+                app:layout_constraintEnd_toEndOf="@id/tvMyProducts"
+                app:layout_constraintStart_toStartOf="@id/tvMyProducts"
+                app:layout_constraintTop_toBottomOf="@id/tvMyProducts" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="@{profile.seller ? View.VISIBLE : View.GONE}">
+
+            <ImageView
+                android:id="@+id/ivDeliveryStatus"
+                android:layout_width="@dimen/_24sdp"
+                android:layout_height="@dimen/_24sdp"
+                android:layout_margin="@dimen/_12sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_delivery_status" />
+
+            <TextView
+                android:id="@+id/tvDeliveryStatus"
+                style="@style/Subtitle"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginEnd="@dimen/_8sdp"
+                android:gravity="start|center_vertical"
+                android:text="Delivery Status"
+                app:layout_constraintBottom_toBottomOf="@+id/ivDeliveryStatus"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/ivDeliveryStatus"
+                app:layout_constraintTop_toTopOf="@+id/ivDeliveryStatus" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_1sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:background="@color/colorPrimary"
+                app:layout_constraintEnd_toEndOf="@id/tvDeliveryStatus"
+                app:layout_constraintStart_toStartOf="@id/tvDeliveryStatus"
+                app:layout_constraintTop_toBottomOf="@id/tvDeliveryStatus" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_12sdp">
+
+            <ImageView
+                android:id="@+id/ivOrderHistory"
+                android:layout_width="@dimen/_24sdp"
+                android:layout_height="@dimen/_24sdp"
+                android:layout_margin="@dimen/_12sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_list"
+                app:tint="@color/colorPrimary" />
+
+            <TextView
+                android:id="@+id/tvOrderHistory"
+                style="@style/Subtitle"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginEnd="@dimen/_8sdp"
+                android:gravity="start|center_vertical"
+                android:text="Order History"
+                app:layout_constraintBottom_toBottomOf="@+id/ivOrderHistory"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/ivOrderHistory"
+                app:layout_constraintTop_toTopOf="@+id/ivOrderHistory" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+</layout>

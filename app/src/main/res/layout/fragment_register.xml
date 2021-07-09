@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="fragment"
+            type="com.sample.ecommerce.ui.fragment.register.RegisterFragment" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background">
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_36sdp"
+            android:padding="@dimen/_8sdp"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="@dimen/_15sdp"
+            app:cardElevation="@dimen/_2sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_12sdp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/Title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="Register" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_16sdp"
+                        android:hint="Username"
+                        android:textColorHint="@color/black"
+                        app:boxCornerRadiusBottomEnd="@dimen/_15sdp"
+                        app:boxCornerRadiusBottomStart="@dimen/_15sdp"
+                        app:boxCornerRadiusTopEnd="@dimen/_15sdp"
+                        app:boxCornerRadiusTopStart="@dimen/_15sdp"
+                        app:boxStrokeColor="@color/black"
+                        app:errorEnabled="true"
+                        app:hintAnimationEnabled="true"
+                        app:hintEnabled="true"
+                        app:passwordToggleTint="@color/black"
+                        app:startIconTint="@color/black">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etUsername"
+                            style="@style/EditText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="textPersonName" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:hint="Email"
+                        android:textColorHint="@color/black"
+                        app:boxCornerRadiusBottomEnd="@dimen/_15sdp"
+                        app:boxCornerRadiusBottomStart="@dimen/_15sdp"
+                        app:boxCornerRadiusTopEnd="@dimen/_15sdp"
+                        app:boxCornerRadiusTopStart="@dimen/_15sdp"
+                        app:boxStrokeColor="@color/black"
+                        app:errorEnabled="true"
+                        app:hintAnimationEnabled="true"
+                        app:hintEnabled="true"
+                        app:passwordToggleTint="@color/black"
+                        app:startIconTint="@color/black">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etEmail"
+                            style="@style/EditText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="textEmailAddress" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:hint="Address"
+                        android:textColorHint="@color/black"
+                        app:boxCornerRadiusBottomEnd="@dimen/_15sdp"
+                        app:boxCornerRadiusBottomStart="@dimen/_15sdp"
+                        app:boxCornerRadiusTopEnd="@dimen/_15sdp"
+                        app:boxCornerRadiusTopStart="@dimen/_15sdp"
+                        app:boxStrokeColor="@color/black"
+                        app:errorEnabled="true"
+                        app:hintAnimationEnabled="true"
+                        app:hintEnabled="true"
+                        app:passwordToggleTint="@color/black"
+                        app:startIconTint="@color/black">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etAddress"
+                            style="@style/EditText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="textCapWords" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:hint="Password"
+                        android:textColorHint="@color/black"
+                        app:boxCornerRadiusBottomEnd="@dimen/_15sdp"
+                        app:boxCornerRadiusBottomStart="@dimen/_15sdp"
+                        app:boxCornerRadiusTopEnd="@dimen/_15sdp"
+                        app:boxCornerRadiusTopStart="@dimen/_15sdp"
+                        app:boxStrokeColor="@color/black"
+                        app:errorEnabled="true"
+                        app:hintAnimationEnabled="true"
+                        app:hintEnabled="true"
+                        app:passwordToggleEnabled="true"
+                        app:passwordToggleTint="@color/black"
+                        app:startIconTint="@color/black">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etPassword"
+                            style="@style/EditText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="textPassword" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:hint="Confirm Password"
+                        android:textColorHint="@color/black"
+                        app:boxCornerRadiusBottomEnd="@dimen/_15sdp"
+                        app:boxCornerRadiusBottomStart="@dimen/_15sdp"
+                        app:boxCornerRadiusTopEnd="@dimen/_15sdp"
+                        app:boxCornerRadiusTopStart="@dimen/_15sdp"
+                        app:boxStrokeColor="@color/black"
+                        app:errorEnabled="true"
+                        app:hintAnimationEnabled="true"
+                        app:hintEnabled="true"
+                        app:passwordToggleEnabled="true"
+                        app:passwordToggleTint="@color/black"
+                        app:startIconTint="@color/black">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etConfirmPassword"
+                            style="@style/EditText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="textPassword" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <CheckBox
+                        android:id="@+id/cbSeller"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Seller"
+                        style="@style/EditText"/>
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnRegister"
+                        style="@style/Widget.MaterialComponents.Button"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_20sdp"
+                        android:onClick="@{() -> fragment.register()}"
+                        android:text="Register"
+                        android:textColor="@color/white"
+                        app:cornerRadius="@dimen/_15sdp" />
+
+                </LinearLayout>
+            </androidx.core.widget.NestedScrollView>
+        </com.google.android.material.card.MaterialCardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

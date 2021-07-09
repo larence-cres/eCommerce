@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="searchText"
+            type="String" />
+
+        <variable
+            name="fragment"
+            type="com.sample.ecommerce.ui.fragment.search.SearchFragment" />
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background"
+        tools:context=".ui.fragment.dashboard.DashboardFragment">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/background"
+            android:orientation="vertical"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginEnd="@dimen/_12sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_scrollFlags="scroll|enterAlways|snap"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+                <ImageView
+                    android:id="@+id/ivBack"
+                    android:layout_width="@dimen/_30sdp"
+                    android:layout_height="@dimen/_30sdp"
+                    android:layout_margin="@dimen/_2sdp"
+                    android:contentDescription="@string/image"
+                    android:onClick="@{() -> fragment.navigateUp()}"
+                    android:padding="@dimen/_4sdp"
+                    app:srcCompat="@drawable/ic_baseline_arrow_back_ios_24"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:tint="@color/black" />
+
+                <TextView
+                    android:id="@+id/tvSearchName"
+                    style="@style/Title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_16sdp"
+                    android:text="@{searchText}"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/ivBack"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="Mobile" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:hint=" "
+                    android:background="@null"
+                    app:boxCornerRadiusBottomEnd="@dimen/_15sdp"
+                    app:boxCornerRadiusBottomStart="@dimen/_15sdp"
+                    app:boxCornerRadiusTopEnd="@dimen/_15sdp"
+                    app:boxCornerRadiusTopStart="@dimen/_15sdp"
+                    app:errorEnabled="false"
+                    app:hintAnimationEnabled="true"
+                    app:hintEnabled="true"
+                    android:focusable="true"
+                    app:boxStrokeColor="@color/transparent"
+                    app:boxStrokeWidth="0dp"
+                    android:layout_margin="@dimen/_16sdp"
+                    android:focusableInTouchMode="true"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/ivSearch"
+                    app:layout_constraintStart_toEndOf="@+id/ivBack"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etSearch"
+                        style="@style/EditText"
+                        android:layout_width="match_parent"
+                        android:textColorHint="@color/disabled"
+                        android:layout_height="wrap_content"
+                        android:hint="Search for products"
+                        android:imeOptions="actionSearch"
+                        android:inputType="text"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/ivSearch"
+                        app:layout_constraintStart_toEndOf="@+id/ivBack"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <requestFocus />
+                    </com.google.android.material.textfield.TextInputEditText>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!--                <EditText-->
+                <!--                    android:id="@+id/etSearch"-->
+                <!--                    style="@style/EditText"-->
+                <!--                    android:layout_width="0dp"-->
+                <!--                    android:layout_height="wrap_content"-->
+                <!--                    android:layout_margin="@dimen/_16sdp"-->
+                <!--                    android:autofillHints="products"-->
+                <!--                    android:hint="Search for products"-->
+                <!--                    android:textColorHint="@color/black"-->
+                <!--                    android:imeOptions="actionSearch"-->
+                <!--                    android:inputType="text"-->
+                <!--                    android:text="@{searchText}"-->
+                <!--                    app:layout_constraintBottom_toBottomOf="parent"-->
+                <!--                    app:layout_constraintEnd_toStartOf="@+id/ivSearch"-->
+                <!--                    app:layout_constraintStart_toEndOf="@+id/ivBack"-->
+                <!--                    app:layout_constraintTop_toTopOf="parent"-->
+                <!--                    tools:text="Mobile">-->
+
+                <!--                    <requestFocus />-->
+                <!--                </EditText>-->
+
+                <ImageView
+                    android:id="@+id/ivSearch"
+                    android:layout_width="@dimen/_30sdp"
+                    android:layout_height="@dimen/_30sdp"
+                    android:contentDescription="@string/image"
+                    android:onClick="@{() -> fragment.showSearchField(true)}"
+                    android:padding="@dimen/_4sdp"
+                    android:visibility="invisible"
+                    app:srcCompat="@drawable/ic_baseline_search_24"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:tint="@color/black" />
+
+                <ImageView
+                    android:id="@+id/ivClear"
+                    android:layout_width="@dimen/_30sdp"
+                    android:layout_height="@dimen/_30sdp"
+                    android:contentDescription="@string/image"
+                    android:onClick="@{() -> fragment.clearSearchField()}"
+                    android:padding="@dimen/_4sdp"
+                    android:visibility="invisible"
+                    app:srcCompat="@drawable/ic_baseline_clear_24"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:tint="@color/black" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvSearchList"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:listitem="@layout/item_search" />
+
+        <com.google.android.material.progressindicator.CircularProgressIndicator
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/_22sdp"
+            android:background="@color/transparent"
+            android:indeterminate="true"
+            android:visibility="gone" />
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>

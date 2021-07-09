@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/dashboardFragment">
+
+    <fragment
+        android:id="@+id/dashboardFragment"
+        android:name="com.sample.ecommerce.ui.fragment.dashboard.DashboardFragment"
+        android:label="DashboardFragment"
+        tools:layout="@layout/fragment_dashboard">
+        <action
+            android:id="@+id/action_dashboardFragment_to_loginFragment"
+            app:destination="@id/loginFragment"
+            app:popUpTo="@id/dashboardFragment"
+            app:popUpToInclusive="false" />
+        <action
+            android:id="@+id/action_dashboardFragment_to_detailFragment"
+            app:destination="@id/detailFragment"
+            app:popUpTo="@id/dashboardFragment"
+            app:popUpToInclusive="false" />
+        <action
+            android:id="@+id/action_dashboardFragment_to_productListFragment"
+            app:destination="@id/productListFragment"
+            app:popUpTo="@id/dashboardFragment"
+            app:popUpToInclusive="false" />
+        <action
+            android:id="@+id/action_dashboardFragment_to_searchFragment"
+            app:destination="@id/searchFragment"
+            app:popUpTo="@id/dashboardFragment"
+            app:popUpToInclusive="false" />
+        <action
+            android:id="@+id/action_dashboardFragment_to_profileFragment"
+            app:destination="@id/profileFragment"
+            app:popUpTo="@id/dashboardFragment"
+            app:popUpToInclusive="false" />
+        <action
+            android:id="@+id/action_dashboardFragment_to_addProductFragment"
+            app:destination="@id/addProductFragment"
+            app:popUpTo="@id/dashboardFragment"
+            app:popUpToInclusive="false" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.sample.ecommerce.ui.fragment.login.LoginFragment"
+        android:label="LoginFragment"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_loginFragment_to_registerFragment"
+            app:destination="@id/registerFragment"
+            app:popUpTo="@id/loginFragment"
+            app:popUpToInclusive="false" />
+    </fragment>
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.sample.ecommerce.ui.fragment.register.RegisterFragment"
+        android:label="RegisterFragment"
+        tools:layout="@layout/fragment_register" />
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.sample.ecommerce.ui.fragment.detail.DetailFragment"
+        android:label="DetailFragment"
+        tools:layout="@layout/fragment_detail">
+        <argument
+            android:name="userId"
+            app:argType="string" />
+        <argument
+            android:name="product"
+            app:argType="com.sample.ecommerce.data.api.model.Product" />
+        <action
+            android:id="@+id/action_detailFragment_to_addProductFragment"
+            app:destination="@id/addProductFragment"
+            app:popUpTo="@id/detailFragment"
+            app:popUpToInclusive="false" />
+    </fragment>
+    <fragment
+        android:id="@+id/productListFragment"
+        android:name="com.sample.ecommerce.ui.fragment.productList.ProductListFragment"
+        android:label="ProductListFragment"
+        tools:layout="@layout/fragment_product_list">
+        <argument
+            android:name="category"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_productListFragment_to_detailFragment"
+            app:destination="@id/detailFragment"
+            app:popUpTo="@id/productListFragment"
+            app:popUpToInclusive="false" />
+        <action
+            android:id="@+id/action_productListFragment_to_searchFragment"
+            app:destination="@id/searchFragment"
+            app:popUpTo="@id/productListFragment"
+            app:popUpToInclusive="false" />
+    </fragment>
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.sample.ecommerce.ui.fragment.search.SearchFragment"
+        android:label="SearchFragment"
+        tools:layout="@layout/fragment_search">
+        <action
+            android:id="@+id/action_searchFragment_to_detailFragment"
+            app:destination="@id/detailFragment"
+            app:popUpTo="@id/searchFragment"
+            app:popUpToInclusive="false" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.sample.ecommerce.ui.fragment.profile.ProfileFragment"
+        android:label="ProfileFragment"
+        tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/addProductFragment"
+        android:name="com.sample.ecommerce.ui.fragment.addProduct.AddProductFragment"
+        android:label="AddProductFragment"
+        tools:layout="@layout/fragment_add_product">
+        <argument
+            android:name="product"
+            app:argType="com.sample.ecommerce.data.api.model.Product" />
+    </fragment>
+</navigation>

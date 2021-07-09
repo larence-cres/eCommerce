@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="topPicks"
+            type="com.sample.ecommerce.data.api.model.Product" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="@dimen/_70sdp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_2sdp">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/ivTopPick"
+            android:layout_width="@dimen/_50sdp"
+            android:layout_height="@dimen/_50sdp"
+            android:background="@color/darkBackground"
+            android:contentDescription="@string/image"
+            android:padding="@dimen/_2sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearanceOverlay="@style/roundedImageView"
+            app:strokeColor="@color/transparency_30_black"
+            app:strokeWidth="@dimen/_1sdp"
+            tools:src="@drawable/ic_baseline_image_24" />
+
+        <TextView
+            style="@style/ItemTitleSmall"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_2sdp"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:maxLines="1"
+            android:text="@{topPicks.name}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ivTopPick"
+            tools:text="Mobile" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

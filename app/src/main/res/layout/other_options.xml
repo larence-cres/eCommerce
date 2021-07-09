@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/ivPrivacyPolicy"
+                android:layout_width="@dimen/_24sdp"
+                android:layout_height="@dimen/_24sdp"
+                android:layout_margin="@dimen/_12sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_privacy_policy" />
+
+            <TextView
+                android:id="@+id/tvPrivacyPolicy"
+                style="@style/Subtitle"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginEnd="@dimen/_8sdp"
+                android:gravity="start|center_vertical"
+                android:text="Privacy Policy"
+                app:layout_constraintBottom_toBottomOf="@+id/ivPrivacyPolicy"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/ivPrivacyPolicy"
+                app:layout_constraintTop_toTopOf="@+id/ivPrivacyPolicy" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_1sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:background="@color/colorPrimary"
+                app:layout_constraintEnd_toEndOf="@id/tvPrivacyPolicy"
+                app:layout_constraintStart_toStartOf="@id/tvPrivacyPolicy"
+                app:layout_constraintTop_toBottomOf="@id/tvPrivacyPolicy" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/ivFAQ"
+                android:layout_width="@dimen/_24sdp"
+                android:layout_height="@dimen/_24sdp"
+                android:layout_margin="@dimen/_12sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_faq"
+                app:tint="@color/colorPrimary" />
+
+            <TextView
+                android:id="@+id/tvFAQ"
+                style="@style/Subtitle"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginEnd="@dimen/_8sdp"
+                android:gravity="start|center_vertical"
+                android:text="FAQ"
+                app:layout_constraintBottom_toBottomOf="@+id/ivFAQ"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/ivFAQ"
+                app:layout_constraintTop_toTopOf="@+id/ivFAQ" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_1sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:background="@color/colorPrimary"
+                app:layout_constraintEnd_toEndOf="@id/tvFAQ"
+                app:layout_constraintStart_toStartOf="@id/tvFAQ"
+                app:layout_constraintTop_toBottomOf="@id/tvFAQ" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_12sdp">
+
+            <ImageView
+                android:id="@+id/ivLegalInformation"
+                android:layout_width="@dimen/_24sdp"
+                android:layout_height="@dimen/_24sdp"
+                android:layout_margin="@dimen/_12sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_legal_info"
+                app:tint="@color/colorPrimary" />
+
+            <TextView
+                android:id="@+id/tvLegalInformation"
+                style="@style/Subtitle"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginEnd="@dimen/_8sdp"
+                android:gravity="start|center_vertical"
+                android:text="Legal Information"
+                app:layout_constraintBottom_toBottomOf="@+id/ivLegalInformation"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/ivLegalInformation"
+                app:layout_constraintTop_toTopOf="@+id/ivLegalInformation" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+</layout>
