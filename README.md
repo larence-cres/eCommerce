@@ -12,5 +12,5 @@ This is a mini project for eCommerce. Still a lot of workarounds required.
 * Used `MVVM` as design pattern
 
 * Screenshots
-    ![Screenshot - 1](https://github.com/larence-cres/eCommerce-Android/blob/main/screenshots/1.png)
-    ![Screenshot - 2](https://github.com/larence-cres/eCommerce-Android/blob/main/screenshots/2.png)
+    ![Screenshot - 1](https://github.com/larence-cres/eCommerce-Android/blob/master/screenshots/1.png)
+    ![Screenshot - 2](https://github.com/larence-cres/eCommerce-Android/blob/master/screenshots/2.png)
