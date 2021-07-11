@@ -38,6 +38,10 @@ class ApiService(private val client: HttpClient) {
         }
     }
 
+    suspend fun getMyCarts(): List<Cart> {
+        return client.get(ApiUrls.CART)
+    }
+
     suspend fun addToCart(cartParams: CartParams): Cart {
         return client.post(ApiUrls.CART) {
             body = cartParams

@@ -27,6 +27,8 @@ class MainRepository(private val apiService: ApiService) {
 
     suspend fun updateProduct(productParams: ProductParams, id: String) = apiService.updateProduct(productParams, id)
 
+    suspend fun getMyCarts() = apiService.getMyCarts()
+
     suspend fun addToCart(cartParams: CartParams) = apiService.addToCart(cartParams)
 
 }

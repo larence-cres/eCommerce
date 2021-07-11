@@ -45,6 +45,11 @@ class DashboardFragment : BaseFragment<FragmentDashboardBinding>() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        getBackStackData<Cart>("cart") {
+            Timber.e("Cart data on dashboard : $it")
+            navigateToProductList("cart")
+        }
+
         initView()
     }
 
@@ -180,7 +185,7 @@ class DashboardFragment : BaseFragment<FragmentDashboardBinding>() {
         findNavController().navigate(action)
     }
 
-    private fun navigateToProductList(category: String) {
+    fun navigateToProductList(category: String) {
         val action = DashboardFragmentDirections
             .actionDashboardFragmentToProductListFragment(category)
         findNavController().navigate(action)

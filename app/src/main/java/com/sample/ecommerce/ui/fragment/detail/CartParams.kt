@@ -6,7 +6,8 @@ data class CartParams(
     val size: String,
     val image: String,
     val color: String,
-    val category: String,
     val quantity: Int,
+    val buyerId: String,
+    val category: String,
     val productId: String,
 )

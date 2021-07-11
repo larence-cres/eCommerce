@@ -91,6 +91,7 @@
                     android:layout_margin="@dimen/_2sdp"
                     android:contentDescription="@string/image"
                     android:padding="@dimen/_4sdp"
+                    android:onClick="@{() -> fragment.navigateToProductList(`cart`)}"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toStartOf="@id/ivAdd"
                     app:layout_constraintTop_toTopOf="parent"

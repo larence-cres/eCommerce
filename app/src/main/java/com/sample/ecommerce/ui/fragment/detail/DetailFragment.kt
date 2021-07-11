@@ -16,6 +16,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.sample.ecommerce.R
 import com.sample.ecommerce.custom.LineIndicator
 import com.sample.ecommerce.data.api.model.Cart
+import com.sample.ecommerce.data.api.model.EmptyProduct
 import com.sample.ecommerce.data.api.model.Product
 import com.sample.ecommerce.data.api.model.Status
 import com.sample.ecommerce.databinding.FragmentDetailBinding
@@ -67,7 +68,9 @@ class DetailFragment : BaseFragment<FragmentDetailBinding>() {
         viewModel.getProductDetail(args.product.id)
         progressDialog = ProgressDialog(requireActivity())
         this.product = args.product
-        setData(args.product)
+        when {
+            args.product != EmptyProduct -> setData(args.product)
+        }
         observeViewModel()
     }
 
@@ -288,8 +291,9 @@ class DetailFragment : BaseFragment<FragmentDetailBinding>() {
             selectedSize,
             product.image[0],
             selectedColor,
-            product.category,
             quantityToAdd,
+            args.userId,
+            product.category,
             product.id
         ))
     }
@@ -301,7 +305,7 @@ class DetailFragment : BaseFragment<FragmentDetailBinding>() {
     }
 
     private fun navigateToCart(cart: Cart) {
-
+        setBackStackData("cart", cart, true)
     }
 
     fun navigateUp() {

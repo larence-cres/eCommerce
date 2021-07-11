@@ -6,6 +6,7 @@ import com.google.gson.Gson
 import com.sample.ecommerce.data.AppConstants
 import com.sample.ecommerce.data.DataStorePreference
 import com.sample.ecommerce.data.NetworkController
+import com.sample.ecommerce.data.api.model.Cart
 import com.sample.ecommerce.data.api.model.FilteredProducts
 import com.sample.ecommerce.data.api.model.Resource
 import com.sample.ecommerce.data.api.model.User
@@ -27,6 +28,10 @@ class ProductListViewModel(
         MutableStateFlow(Resource.empty(null))
     val productsStateFlow: StateFlow<Resource<FilteredProducts>> = _productsStateFlow
 
+    private val _cartStateFlow: MutableStateFlow<Resource<List<Cart>>> =
+        MutableStateFlow(Resource.empty(null))
+    val cartStateFlow: StateFlow<Resource<List<Cart>>> = _cartStateFlow
+
     fun getProductsDetail(category: String) = viewModelScope.launch {
         when {
             networkController.isConnected() -> {
@@ -45,6 +50,28 @@ class ProductListViewModel(
             }
             else -> {
                 _productsStateFlow.value = Resource.error(null, "No internet Connection", 0)
+            }
+        }
+    }
+
+    fun getMyCarts() = viewModelScope.launch {
+        when {
+            networkController.isConnected() -> {
+                _cartStateFlow.value = Resource.loading(null)
+                try {
+                    val response = repository.getMyCarts()
+                    _cartStateFlow.value = Resource.success(response)
+                } catch (e: ResponseException) {
+                    _cartStateFlow.value =
+                        Resource.error(
+                            null,
+                            getErrorMessage(e.response.readText()),
+                            e.response.status.value
+                        )
+                }
+            }
+            else -> {
+                _cartStateFlow.value = Resource.error(null, "No internet Connection", 0)
             }
         }
     }
